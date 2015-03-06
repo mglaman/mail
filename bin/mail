@@ -1,0 +1,31 @@
+#!/usr/bin/env php
+<?php
+
+error_reporting(E_ALL & ~E_NOTICE & ~E_USER_NOTICE);
+
+if (!extension_loaded('imap')) {
+  echo 'The PHP IMAP module is required, please run' . PHP_EOL .
+    'sudo apt-get install php5-imap' . PHP_EOL .
+    'sudo php5enmod imap';
+  exit(1);
+}
+
+define('CLI_ROOT', __DIR__ . '/../');
+
+if (file_exists(CLI_ROOT . '/vendor/autoload.php')) {
+  require_once CLI_ROOT . '/vendor/autoload.php';
+}
+elseif (file_exists(CLI_ROOT . '/../../vendor/autoload.php')) {
+  require_once CLI_ROOT . '/../../vendor/autoload.php';
+}
+else {
+  echo 'Something goes wrong with your archive' . PHP_EOL .
+    'Try downloading again' . PHP_EOL;
+  exit(1);
+}
+
+use ConsoleMail\Application;
+use Symfony\Component\Console\Input\ArgvInput;
+
+$application = new Application();
+$application->run(new ArgvInput());

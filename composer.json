@@ -1,0 +1,24 @@
+{
+    "name": "mglaman/mail",
+    "description": "Console app for reading via IMAP",
+    "require": {
+        "php": ">=5.4.5",
+        "symfony/console": "2.6",
+        "symfony/yaml": "~2.6",
+        "php-imap/php-imap": "dev-master"
+    },
+    "bin": ["bin/console"],
+    "config": {
+	    "bin-dir": "bin/"
+    },
+    "autoload": {
+	    "psr-4": {"ConsoleMail\\": "src"}
+    },
+    "license": "GPL",
+    "authors": [
+        {
+            "name": "Matt Glaman",
+            "email": "nmd.matt@gmail.com"
+        }
+    ]
+}

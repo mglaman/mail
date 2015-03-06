@@ -1,0 +1,4 @@
+host: imap.server.net
+port: 143
+user: mglaman
+pass: PASS
