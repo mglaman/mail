@@ -15,7 +15,7 @@ Available commands:
   mail check [BOX]        Returns number of recent and total emails.
   mail list [BOX]         Displays overview 10 recent emails
   mail view ID [BOX]      Views an email
-  mail rm ID [BOX]        Moves email to trash
+  mail rm ID [BOX]        Moves email to trash. Supports command separated IDs.
 ````
 
 ## Kudos

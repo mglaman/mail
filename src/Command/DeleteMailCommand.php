@@ -23,8 +23,10 @@ class DeleteMailCommand extends ConsoleMailCommand {
       return 1;
     }
 
-    $mailbox->deleteMail($mailId);
-
+    $idArray = explode(',', $mailId);
+    foreach ($idArray as $id) {
+      $mailbox->deleteMail($id);
+    }
     return 0;
   }
 }
